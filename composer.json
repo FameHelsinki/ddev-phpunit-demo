@@ -4,25 +4,45 @@
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/mstrelan/ddev-phpunit-demo",
-    "repositories": [
-        {
+    "repositories": {
+        "maxlength": {
+            "type": "path",
+            "url": "repos/maxlength",
+            "options": {
+                "versions": {
+                    "drupal/maxlength": "dev-3.x"
+                }
+            }
+        },
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    ],
+    },
     "require": {
         "composer/installers": "^1.9",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-recommended": "^9.2",
-        "drush/drush": "^10.6"
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-recommended": "^10.2",
+        "drupal/maxlength": "^3.x-dev",
+        "drush/drush": "^12.0",
+        "joachim-n/drupal-project-contrib-development": "dev-main",
+        "weitzman/drupal-test-traits": "^2"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "joachim-n/drupal-project-contrib-development": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -63,8 +83,7 @@
     },
     "require-dev": {
         "dmore/chrome-mink-driver": "^2.8",
-        "drupal/core-dev": "^9.2",
-        "phpspec/prophecy-phpunit": "^2.0",
-        "weitzman/drupal-test-traits": "^1.5"
+        "drupal/core-dev": "^10.2",
+        "phpspec/prophecy-phpunit": "^2.0"
     }
 }

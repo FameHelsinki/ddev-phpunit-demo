@@ -1,0 +1,17 @@
+#!/bin/bash
+
+## Description: Runs phpunit tests
+## Usage: phpunit
+## Example: "ddev phpunit path/to/tests"
+## Example: "ddev phpunit --testsuite=unit"
+
+# Disable Xdebug to speed up test executions and to avoid debugger connection
+# problems.
+disable_xdebug
+
+# Start ChromeDriver process.
+#nohup chromedriver --log-path=/var/www/html/tmp/chromedriver.log --port=9515 &> /dev/null &
+
+# Run tests.
+cd /var/www/html
+phpunit --process-isolation $@

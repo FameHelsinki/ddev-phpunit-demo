@@ -35,11 +35,14 @@
     <!-- Example for changing the driver args to mink tests MINK_DRIVER_ARGS value: '["http://127.0.0.1:8510"]' -->
     <env name="MINK_DRIVER_ARGS" value=''/>
     <!-- Example for changing the driver args to webdriver tests MINK_DRIVER_ARGS_WEBDRIVER value: '["chrome", { "chromeOptions": { "w3c": false } }, "http://localhost:4444/wd/hub"]' For using the Firefox browser, replace "chrome" with "firefox" -->
-    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless", "--no-sandbox"]}}, "http://chromedriver:9515"]'/>
+    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value="[&quot;chrome&quot;, {&quot;browserName&quot;:&quot;chrome&quot;,&quot;chromeOptions&quot;:{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--disable-dev-shm-usage&quot;,&quot;--headless&quot;,&quot;--no-sandbox&quot;,&quot;--window-size=1920,1080&quot;]}}, &quot;http://selenium-chrome:4444/wd/hub&quot;]"/>
+
 
     <env name="DTT_BASE_URL" value="http://ddev-phpunit-demo.ddev.site"/>
-    <env name="DTT_API_URL" value="http://chrome:9222"/>
-    <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless", "--no-sandbox"]}}, "http://chromedriver:9515"]'/>
+    <env name="DTT_API_URL" value="http://selenium-chrome:9222"/>
+    <env name="DTT_MINK_DRIVER_ARGS" value="[&quot;chrome&quot;, {&quot;browserName&quot;:&quot;chrome&quot;,&quot;chromeOptions&quot;:{&quot;args&quot;:[&quot;--disable-gpu&quot;,&quot;--disable-dev-shm-usage&quot;,&quot;--headless&quot;,&quot;--no-sandbox&quot;,&quot;--window-size=1920,1080&quot;]}}, &quot;http://selenium-chrome:4444/wd/hub&quot;]"/>
+
+
 
 
   </php>

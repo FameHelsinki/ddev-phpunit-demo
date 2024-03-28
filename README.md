@@ -1,14 +1,16 @@
-# DDev PHPUnit Demo
+# DDEV PHPUnit Demo
 
 ## What is inside of this fork
 
 - Drupal 10.2 support
-- joachim-n/drupal-project-contrib-development for easier contrib development
+- ARM-architechture support Selenium-Chrome image.
+- [joachim-n/drupal-project-contrib-development](https://github.com/joachim-n/drupal-core-development-project) for easier contrib development
 - Simpler setup
 - VSCode support
 
 ## How to use
 
+- Install [DDEV](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/)
 - `ddev start`
 - Replace `MODULE_NAME` on following with name of your contrib module.
 - `ddev composer require drupal/MODULE_NAME`

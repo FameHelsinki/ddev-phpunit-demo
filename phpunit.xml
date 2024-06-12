@@ -5,13 +5,15 @@
  or your current system user. See core/tests/README.md and
  https://www.drupal.org/node/2116263 for details.
 -->
-<phpunit bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php" colors="true"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php" colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true"
          failOnWarning="true"
          printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter"
-         cacheResult="false">
+         cacheResult="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <php>
     <!-- Set error reporting to E_ALL. -->
     <ini name="error_reporting" value="32767"/>
@@ -22,7 +24,7 @@
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="sqlite://localhost/sites/simpletest/db.sqlite"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
-    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value=""/>
+    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="/var/www/html/browser_output"/>
     <!-- To have browsertest output use an alternative base URL. For example if
      SIMPLETEST_BASE_URL is an internal DDEV URL, you can set this to the
      external DDev URL so you can follow the links directly.
@@ -68,24 +70,24 @@
     </listener>
   </listeners>
   <!-- Filter for coverage reports. -->
-  <filter>
-    <whitelist>
+  <coverage>
+    <include>
       <directory>./web/core/includes</directory>
       <directory>./web/core/lib</directory>
-      <!-- Extensions can have their own test directories, so exclude those. -->
       <directory>./web/core/modules</directory>
-      <exclude>
+      <directory>./web/modules</directory>
+      <directory>./web/sites</directory>
+    </include>
+    <exclude>
         <directory>./web/core/modules/*/src/Tests</directory>
         <directory>./web/core/modules/*/tests</directory>
-      </exclude>
-      <directory>./web/modules</directory>
-      <exclude>
         <directory>./web/modules/*/src/Tests</directory>
         <directory>./web/modules/*/tests</directory>
         <directory>./web/modules/*/*/src/Tests</directory>
         <directory>./web/modules/*/*/tests</directory>
-      </exclude>
-      <directory>./web/sites</directory>
-     </whitelist>
-  </filter>
+        <directory suffix=".api.php">./lib/**</directory>
+        <directory suffix=".api.php">./modules/**</directory>
+        <directory suffix=".api.php">../modules/**</directory>
+    </exclude>
+  </coverage>
 </phpunit>

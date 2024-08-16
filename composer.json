@@ -5,12 +5,12 @@
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/mstrelan/ddev-phpunit-demo",
     "repositories": {
-        "redirect": {
+        "admin_toolbar": {
             "type": "path",
-            "url": "repos/redirect",
+            "url": "repos/admin_toolbar",
             "options": {
                 "versions": {
-                    "drupal/redirect": "1.9.0"
+                    "drupal/admin_toolbar": "3.5.0"
                 }
             }
         },
@@ -21,6 +21,8 @@
     },
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/admin_toolbar": "^3.5",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-recommended": "^11",
         "drupal/devel": "^5.2",
@@ -41,7 +43,8 @@
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "joachim-n/drupal-project-contrib-development": true
+            "joachim-n/drupal-project-contrib-development": true,
+            "cweagans/composer-patches": true
         }
     },
     "extra": {
@@ -50,6 +53,10 @@
                 "web-root": "web/"
             },
             "gitignore": true
+        },
+        "composer-exit-on-patch-failure": true,
+        "enable-patching": true,
+        "patches": {
         },
         "installer-paths": {
             "web/core": [
@@ -83,7 +90,7 @@
     },
     "require-dev": {
         "dmore/chrome-mink-driver": "^2.8",
-        "drupal/core-dev": "^11",
+        "drupal/core-dev": "^11.0",
         "phpspec/prophecy-phpunit": "^2.0"
     }
 }

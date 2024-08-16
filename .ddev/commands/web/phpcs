@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## #ddev-generated
+## Description: Run PHPCS
+## Usage: phpcs
+## Example: ddev phpcs
+
+/var/www/html/vendor/bin/phpcs --standard="Drupal,DrupalPractice" --extensions="php,module,inc,install,test,profile,theme" $@

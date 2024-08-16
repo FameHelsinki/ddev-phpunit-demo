@@ -2,7 +2,7 @@
 
 ## What is inside of this fork
 
-- Drupal 10.2 support
+- Drupal 11.x support
 - ARM-architechture support Selenium-Chrome image.
 - [joachim-n/drupal-project-contrib-development](https://github.com/joachim-n/drupal-core-development-project) for easier contrib development
 - Simpler setup
@@ -12,11 +12,64 @@
 
 - Install [DDEV](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/)
 - `ddev start`
-- Replace `MODULE_NAME` on following with name of your contrib module.
+- Replace `MODULE_NAME` on following with name of your contrib module (use admin_toolbar).
+- `mkdir -p repos; cd repos`
+- `git clone git@git.drupal.org:project/MODULE_NAME`
+- `cd ..`
+- `ddev composer install`
+
+### Alternative way to include new modules.
+
 - `ddev composer require drupal/MODULE_NAME`
 - `ddev composer drupal-contrib:switch-clone MODULE_NAME`
-- `ddev phpunit -v web/modules/contrib/MODULE_NAME`
+
+## PHPStan
+
+To analyze using the distributed phpstan.neon.xml file:
+```
+phpstan web/modules/contrib/MODULE_NAME
+```
+
+to get more errors to fix, increase the level
+```
+phpstan web/modules/contrib/MODULE_NAME -l9
+```
+
+## PHPCS
+
+```
+ddev phpcs web/modules/contrib/MODULE_NAME
+```
+
+## PHPCBF
+
+```
+ddev phpcbf web/modules/contrib/MODULE_NAME
+```
+
+## CSPell
+
+```
+cd web/core
+ddev yarn install
+ddev yarn run spellcheck ../modules/contrib/MODULE_NAME
+```
+
+## ESlint
+
+```
+ddev eslint web/modules/contrib/MODULE_NAME
+ddev eslint web/modules/contrib/MODULE_NAME --fix
+```
+
+## Run PHPUnit tests
+
+- `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
 - `ddev phpunit --group MODULE_NAME`
+
+## Other resources
+
+- https://github.com/justafish/ddev-drupal-core-dev
 
 ## Original readmd
 

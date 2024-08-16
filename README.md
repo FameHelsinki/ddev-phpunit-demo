@@ -23,11 +23,6 @@
 - `ddev composer require drupal/MODULE_NAME`
 - `ddev composer drupal-contrib:switch-clone MODULE_NAME`
 
-## Run PHPUnit tests
-
-- `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
-- `ddev phpunit --group MODULE_NAME`
-
 ## PHPStan
 
 To analyze using the distributed phpstan.neon.xml file:
@@ -66,6 +61,11 @@ ddev yarn run spellcheck ../modules/contrib/MODULE_NAME
 ddev eslint web/modules/contrib/MODULE_NAME
 ddev eslint web/modules/contrib/MODULE_NAME --fix
 ```
+
+## Run PHPUnit tests
+
+- `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
+- `ddev phpunit --group MODULE_NAME`
 
 ## Original readmd
 

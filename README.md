@@ -48,6 +48,7 @@ ddev phpcbf web/modules/contrib/MODULE_NAME
 ```
 cd web/core
 ddev yarn install
+ddev yarn run spellcheck ../modules/contrib/MODULE_NAME
 ```
 
 ## ESlint

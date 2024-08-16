@@ -5,15 +5,6 @@
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/mstrelan/ddev-phpunit-demo",
     "repositories": {
-        "redirect": {
-            "type": "path",
-            "url": "repos/redirect",
-            "options": {
-                "versions": {
-                    "drupal/redirect": "1.9.0"
-                }
-            }
-        },
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"

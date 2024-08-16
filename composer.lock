@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "409667b6199185949da64ae3128cae29",
+    "content-hash": "a959565b7f09734f2f63bc2781cca5c3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1863,6 +1863,53 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
+            }
+        },
+        {
+            "name": "drupal/merge_translations",
+            "version": "dev-2.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/merge_translations.git",
+                "reference": "f0048f724d0756412ef147f66f5e1cfb39e9e788"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0.x": "2.0.x-dev"
+                },
+                "drupal": {
+                    "version": "2.0.0+2-dev",
+                    "datestamp": "1723097591",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "lamp5",
+                    "homepage": "https://www.drupal.org/user/2870321",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "miiimooo",
+                    "homepage": "https://www.drupal.org/user/62954"
+                }
+            ],
+            "description": "Allows users to merge node translations.",
+            "homepage": "https://www.drupal.org/project/merge_translations",
+            "support": {
+                "source": "https://cgit.drupalcode.org/merge_translations",
+                "issues": "https://www.drupal.org/project/issues/merge_translations"
             }
         },
         {
@@ -12236,5 +12283,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -15,7 +15,7 @@
 - Replace `MODULE_NAME` on following with name of your contrib module.
 - `ddev composer require drupal/MODULE_NAME`
 - `ddev composer drupal-contrib:switch-clone MODULE_NAME`
-- `ddev phpunit -v web/modules/contrib/MODULE_NAME`
+- `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
 - `ddev phpunit --group MODULE_NAME`
 
 ## PHPStan
@@ -43,6 +43,19 @@ ddev phpcs web/modules/contrib/MODULE_NAME
 ddev phpcbf web/modules/contrib/MODULE_NAME
 ```
 
+## CSPell
+
+```
+cd web/core
+ddev yarn install
+```
+
+## ESlint
+
+```
+ddev eslint web/modules/contrib/MODULE_NAME
+ddev eslint web/modules/contrib/MODULE_NAME --fix
+```
 
 ## Original readmd
 

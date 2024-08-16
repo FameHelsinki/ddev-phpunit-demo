@@ -9,8 +9,12 @@
 # problems.
 #disable_xdebug
 
-# Start ChromeDriver process.
-#nohup chromedriver --log-path=/var/www/html/tmp/chromedriver.log --port=9515 &> /dev/null &
+if ! command -v phpunit >/dev/null; then
+  echo "phpunit is not in PATH in the web container. You probably forgot to 'ddev composer install'"
+  exit 2
+fi
+echo "Clearing old webdriver sessions"
+curl -f -s http://selenium-chrome:4444/status | jq -r '.value.nodes[].slots[].session.sessionId' | while read -r session; do if [ "$session" != "null" ]; then curl -X DELETE "http://selenium-chrome:4444/session/$session"; fi; done
 
 # Run tests.
 cd /var/www/html

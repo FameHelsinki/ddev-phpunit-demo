@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8de7d54be18dcf0574a150f8f5421af9",
+    "content-hash": "eeeda4b20815a8857d0d2477a03ed496",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1422,12 +1422,35 @@
         {
             "name": "drupal/admin_toolbar",
             "version": "3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
+                "reference": "3.5.0"
+            },
             "dist": {
-                "type": "path",
-                "url": "repos/admin_toolbar",
-                "reference": "30ca29c79aa2c9ae84bb315b30ff8ac133e77bb7"
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.5.0.zip",
+                "reference": "3.5.0",
+                "shasum": "099e8d4dc98e1d551b4f9cffdc39599eb8ad04e8"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/admin_toolbar_tools": "*"
             },
             "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.5.0",
+                    "datestamp": "1722639094",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1444,14 +1467,30 @@
                 },
                 {
                     "name": "Adrian Cid Almaguer (adriancid)",
-                    "email": "adriancid@gmail.com",
                     "homepage": "https://www.drupal.org/u/adriancid",
+                    "email": "adriancid@gmail.com",
                     "role": "Maintainer"
                 },
                 {
                     "name": "Mohamed Anis Taktak (matio89)",
                     "homepage": "https://www.drupal.org/u/matio89",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "Musa.thomas",
+                    "homepage": "https://www.drupal.org/user/1213824"
+                },
+                {
+                    "name": "romainj",
+                    "homepage": "https://www.drupal.org/user/370706"
                 }
             ],
             "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
@@ -1461,11 +1500,8 @@
                 "Toolbar"
             ],
             "support": {
-                "issues": "https://www.drupal.org/project/issues/admin_toolbar",
-                "source": "https://git.drupalcode.org/project/admin_toolbar"
-            },
-            "transport-options": {
-                "relative": true
+                "source": "https://git.drupalcode.org/project/admin_toolbar",
+                "issues": "https://www.drupal.org/project/issues/admin_toolbar"
             }
         },
         {
@@ -2670,43 +2706,6 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2024-06-28T20:10:30+00:00"
-        },
-        {
-            "name": "joachim-n/drupal-project-contrib-development",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/joachim-n/drupal-project-contrib-development.git",
-                "reference": "ce67d8b6bfe63a9612e96f8d5fc4c273fbab148f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/joachim-n/drupal-project-contrib-development/zipball/ce67d8b6bfe63a9612e96f8d5fc4c273fbab148f",
-                "reference": "ce67d8b6bfe63a9612e96f8d5fc4c273fbab148f",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^2.0"
-            },
-            "require-dev": {
-                "symfony/var-dumper": "^6 || ^7.0"
-            },
-            "default-branch": true,
-            "type": "composer-plugin",
-            "extra": {
-                "class": "DrupalContribDevelopment\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "DrupalContribDevelopment\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "support": {
-                "issues": "https://github.com/joachim-n/drupal-project-contrib-development/issues",
-                "source": "https://github.com/joachim-n/drupal-project-contrib-development/tree/main"
-            },
-            "time": "2024-05-01T13:42:09+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -12193,9 +12192,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "joachim-n/drupal-project-contrib-development": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

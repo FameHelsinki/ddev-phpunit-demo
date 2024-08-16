@@ -8,6 +8,7 @@ router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
+performance_mode: none
 database:
     type: mariadb
     version: "10.6"

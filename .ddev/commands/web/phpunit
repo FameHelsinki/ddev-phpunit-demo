@@ -7,7 +7,7 @@
 
 # Disable Xdebug to speed up test executions and to avoid debugger connection
 # problems.
-disable_xdebug
+#disable_xdebug
 
 # Start ChromeDriver process.
 #nohup chromedriver --log-path=/var/www/html/tmp/chromedriver.log --port=9515 &> /dev/null &

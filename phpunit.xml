@@ -6,14 +6,27 @@
  https://www.drupal.org/node/2116263 for details.
 -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php" colors="true"
+         bootstrap="web/core/tests/bootstrap.php"
+         colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true"
          failOnWarning="true"
-         printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
          cacheResult="false"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         cacheDirectory=".phpunit.cache">
+<!--<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+         <!--bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php" colors="true"-->
+         <!--beStrictAboutTestsThatDoNotTestAnything="true"-->
+         <!--beStrictAboutOutputDuringTests="true"-->
+         <!--beStrictAboutChangesToGlobalState="true"-->
+         <!--failOnWarning="true"-->
+         <!--printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter"-->
+         <!--cacheResult="false"-->
+         <!--xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd">-->
   <php>
     <!-- Set error reporting to E_ALL. -->
     <ini name="error_reporting" value="32767"/>
@@ -24,7 +37,7 @@
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="sqlite://localhost/sites/simpletest/db.sqlite"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
-    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="/var/www/html/browser_output"/>
+    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="/var/www/html/web/sites/simpletest/browser_output"/>
     <!-- To have browsertest output use an alternative base URL. For example if
      SIMPLETEST_BASE_URL is an internal DDEV URL, you can set this to the
      external DDev URL so you can follow the links directly.
@@ -48,6 +61,25 @@
 
 
   </php>
+  <extensions>
+    <!-- Functional tests HTML output logging. -->
+    <bootstrap class="Drupal\TestTools\Extension\HtmlLogging\HtmlOutputLogger">
+      <!-- The directory where the browser output will be stored. If a relative
+        path is specified, it will be relative to the current working directory
+        of the process running the PHPUnit CLI. In CI environments, this can be
+        overridden by the value set for the "BROWSERTEST_OUTPUT_DIRECTORY"
+        environment variable.
+      -->
+      <parameter name="outputDirectory" value="/var/www/html/web/sites/simpletest/browser_output"/>
+      <!-- By default browser tests print the individual links in the test run
+        report. To avoid overcrowding the output in CI environments, you can
+        set the "verbose" parameter or the "BROWSERTEST_OUTPUT_VERBOSE"
+        environment variable to "false". In GitLabCI, the output is saved
+        anyway as an artifact that can be browsed or downloaded from Gitlab.
+      -->
+      <parameter name="verbose" value="true"/>
+    </bootstrap>
+  </extensions>
   <testsuites>
     <testsuite name="unit">
       <file>./web/core/tests/TestSuites/UnitTestSuite.php</file>
@@ -65,12 +97,8 @@
       <file>./web/core/tests/TestSuites/BuildTestSuite.php</file>
     </testsuite>
   </testsuites>
-  <listeners>
-    <listener class="\Drupal\Tests\Listeners\DrupalListener">
-    </listener>
-  </listeners>
   <!-- Filter for coverage reports. -->
-  <coverage>
+  <source ignoreSuppressionOfDeprecations="true">
     <include>
       <directory>./web/core/includes</directory>
       <directory>./web/core/lib</directory>
@@ -89,5 +117,5 @@
         <directory suffix=".api.php">./modules/**</directory>
         <directory suffix=".api.php">../modules/**</directory>
     </exclude>
-  </coverage>
+  </source>
 </phpunit>

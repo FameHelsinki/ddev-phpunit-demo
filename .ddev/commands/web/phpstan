@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## #ddev-generated
+## Description: Run PHPStan
+## Usage: phpstan
+## Example: ddev phpstan
+
+phpstan analyze --memory-limit=2G $@

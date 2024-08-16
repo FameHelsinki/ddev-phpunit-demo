@@ -18,6 +18,7 @@ web_environment: []
 corepack_enable: true
 hooks:
   post-start:
+    - exec: "mkdir -p repos"
     - exec: "mkdir -p web/browser_output"
     - exec: "chmod +w web/browser_output"
 

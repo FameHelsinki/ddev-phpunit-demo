@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a959565b7f09734f2f63bc2781cca5c3",
+    "content-hash": "8de7d54be18dcf0574a150f8f5421af9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1422,35 +1422,12 @@
         {
             "name": "drupal/admin_toolbar",
             "version": "3.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
-                "reference": "3.5.0"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-3.5.0.zip",
-                "reference": "3.5.0",
-                "shasum": "099e8d4dc98e1d551b4f9cffdc39599eb8ad04e8"
-            },
-            "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
-            },
-            "require-dev": {
-                "drupal/admin_toolbar_tools": "*"
+                "type": "path",
+                "url": "repos/admin_toolbar",
+                "reference": "30ca29c79aa2c9ae84bb315b30ff8ac133e77bb7"
             },
             "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "3.5.0",
-                    "datestamp": "1722639094",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1467,30 +1444,14 @@
                 },
                 {
                     "name": "Adrian Cid Almaguer (adriancid)",
-                    "homepage": "https://www.drupal.org/u/adriancid",
                     "email": "adriancid@gmail.com",
+                    "homepage": "https://www.drupal.org/u/adriancid",
                     "role": "Maintainer"
                 },
                 {
                     "name": "Mohamed Anis Taktak (matio89)",
                     "homepage": "https://www.drupal.org/u/matio89",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "japerry",
-                    "homepage": "https://www.drupal.org/user/45640"
-                },
-                {
-                    "name": "matio89",
-                    "homepage": "https://www.drupal.org/user/2320090"
-                },
-                {
-                    "name": "Musa.thomas",
-                    "homepage": "https://www.drupal.org/user/1213824"
-                },
-                {
-                    "name": "romainj",
-                    "homepage": "https://www.drupal.org/user/370706"
                 }
             ],
             "description": "Provides a drop-down menu interface to the core Drupal Toolbar.",
@@ -1500,8 +1461,11 @@
                 "Toolbar"
             ],
             "support": {
-                "source": "https://git.drupalcode.org/project/admin_toolbar",
-                "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+                "issues": "https://www.drupal.org/project/issues/admin_toolbar",
+                "source": "https://git.drupalcode.org/project/admin_toolbar"
+            },
+            "transport-options": {
+                "relative": true
             }
         },
         {
@@ -1863,53 +1827,6 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
-            }
-        },
-        {
-            "name": "drupal/merge_translations",
-            "version": "dev-2.0.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/merge_translations.git",
-                "reference": "f0048f724d0756412ef147f66f5e1cfb39e9e788"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.0.x": "2.0.x-dev"
-                },
-                "drupal": {
-                    "version": "2.0.0+2-dev",
-                    "datestamp": "1723097591",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "lamp5",
-                    "homepage": "https://www.drupal.org/user/2870321",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "miiimooo",
-                    "homepage": "https://www.drupal.org/user/62954"
-                }
-            ],
-            "description": "Allows users to merge node translations.",
-            "homepage": "https://www.drupal.org/project/merge_translations",
-            "support": {
-                "source": "https://cgit.drupalcode.org/merge_translations",
-                "issues": "https://www.drupal.org/project/issues/merge_translations"
             }
         },
         {
@@ -12283,5 +12200,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

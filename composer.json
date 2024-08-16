@@ -5,6 +5,15 @@
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/mstrelan/ddev-phpunit-demo",
     "repositories": {
+        "admin_toolbar": {
+            "type": "path",
+            "url": "repos/admin_toolbar",
+            "options": {
+                "versions": {
+                    "drupal/admin_toolbar": "3.5.0"
+                }
+            }
+        },
         "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"

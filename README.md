@@ -67,6 +67,10 @@ ddev eslint web/modules/contrib/MODULE_NAME --fix
 - `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
 - `ddev phpunit --group MODULE_NAME`
 
+## Other resources
+
+- https://github.com/justafish/ddev-drupal-core-dev
+
 ## Original readmd
 
 See [Running and debugging PHPUnit tests in PHPStorm with DDev and xdebug](https://www.previousnext.com.au/blog/running-and-debugging-phpunit-tests-phpstorm-ddev-and-xdebug) for a video demo covering configuration for running and debugging:

@@ -12,14 +12,23 @@
 
 - Install [DDEV](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/)
 - `ddev start`
-- Replace `MODULE_NAME` on following with name of your contrib module.
+- Replace `MODULE_NAME` on following with name of your contrib module (use admin_toolbar).
+- `mkdir -p repos; cd repos`
+- `git clone git@git.drupal.org:project/MODULE_NAME`
+- `cd ..`
+- `ddev composer install`
+
+### Alternative way to include new modules.
+
 - `ddev composer require drupal/MODULE_NAME`
 - `ddev composer drupal-contrib:switch-clone MODULE_NAME`
+
+## Run PHPUnit tests
+
 - `ddev phpunit --debug web/modules/contrib/MODULE_NAME`
 - `ddev phpunit --group MODULE_NAME`
 
 ## PHPStan
-
 
 To analyze using the distributed phpstan.neon.xml file:
 ```

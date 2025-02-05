@@ -84,19 +84,19 @@
   </extensions>
   <testsuites>
     <testsuite name="unit">
-      <file>./web/core/tests/TestSuites/UnitTestSuite.php</file>
+      <directory>./web/core/tests/Drupal/Tests</directory>
     </testsuite>
     <testsuite name="kernel">
-      <file>./web/core/tests/TestSuites/KernelTestSuite.php</file>
+      <directory>./web/core/tests/Drupal/KernelTests</directory>
     </testsuite>
     <testsuite name="functional">
-      <file>./web/core/tests/TestSuites/FunctionalTestSuite.php</file>
+      <directory>./web/core/tests/Drupal/FunctionalTests</directory>
     </testsuite>
     <testsuite name="functional-javascript">
-      <file>./web/core/tests/TestSuites/FunctionalJavascriptTestSuite.php</file>
+      <directory>./web/core/tests/Drupal/FunctionalJavascriptTests</directory>
     </testsuite>
     <testsuite name="build">
-      <file>./web/core/tests/TestSuites/BuildTestSuite.php</file>
+      <directory>./web/core/tests/Drupal/BuildTests</directory>
     </testsuite>
   </testsuites>
   <!-- Filter for coverage reports. -->

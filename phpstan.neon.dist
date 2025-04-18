@@ -1,0 +1,12 @@
+parameters:
+  level: 1
+
+  ignoreErrors:
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    - "#^Unsafe usage of new static#"
+    # Ignore PHPUnit Prophecy class reflection errors.
+    - "#^Call to an undefined method Prophecy#"
+    # Core ignores this as well.
+    - "#^Class .* extends @internal class#"
+    # Until the class is refactored more.
+    - "#^Static call to instance method .*getPartialTree\\(\\)#"

@@ -32,6 +32,12 @@
     "php.suggest.basic": false,
     "phpCodeSniffer.autoExecutable": true,
     "phpCodeSniffer.standard": "Custom",
-    "phpCodeSniffer.standardCustom": "Drupal,DrupalPractice"
+    "phpCodeSniffer.standardCustom": "Drupal,DrupalPractice",
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/vendor": true
+    },
+    "search.useIgnoreFiles": false,
+    "search.useParentIgnoreFiles": true
 }
 
